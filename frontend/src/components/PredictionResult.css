@@ -1,111 +1,231 @@
 .prediction-result {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 2rem;
-    border-radius: 12px;
+    background: var(--bg-primary);
+    padding: 2.5rem;
+    border-radius: 16px;
     margin-top: 2rem;
-    color: white;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-color);
 }
 
 .prediction-result h2 {
     text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.prediction-result h2::before {
+    content: '📊';
+    font-size: 2rem;
 }
 
 .predicted-class {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
     text-align: center;
+    border: 2px solid var(--border-color);
 }
 
 .predicted-class h3 {
     margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.predicted-class .prediction-badge {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
     font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    box-shadow: var(--shadow-md);
 }
 
 .predicted-class span.leprosy {
-    color: #ff6b6b;
-    font-weight: bold;
-    font-size: 1.8rem;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
 }
 
 .predicted-class span.non-leprosy {
-    color: #51cf66;
-    font-weight: bold;
-    font-size: 1.8rem;
+    background: linear-gradient(135deg, var(--success-color), #059669);
+    color: white;
 }
 
 .probabilities {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .probabilities h4 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.probabilities h4::before {
+    content: '📈';
+    font-size: 1.25rem;
 }
 
 .probability-item {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .probability-label {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
     font-weight: 500;
+    color: var(--text-primary);
+}
+
+.probability-label span:first-child {
+    font-size: 1rem;
+}
+
+.probability-label span:last-child {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
 }
 
 .probability-bar {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--bg-tertiary);
     border-radius: 10px;
-    height: 20px;
+    height: 24px;
     overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    position: relative;
 }
 
 .probability-fill {
-    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
     height: 100%;
-    transition: width 0.5s ease;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.probability-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.probability-fill.leprosy-bar {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.probability-fill.non-leprosy-bar {
+    background: linear-gradient(90deg, var(--success-color), #34d399);
 }
 
 .disclaimer {
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #2c3e50;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    border-left: 4px solid #f39c12;
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    color: #92400e;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--warning-color);
+    box-shadow: var(--shadow-sm);
 }
 
 .disclaimer p {
     margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.9375rem;
+    line-height: 1.6;
 }
 
 .disclaimer strong {
-    color: #e74c3c;
+    color: #78350f;
+    font-weight: 600;
+}
+
+.disclaimer::before {
+    content: '⚠️';
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+    display: inline-block;
 }
 
 .reset-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 2px solid white;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    padding: 1rem 2rem;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1.125rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.reset-btn::before {
+    content: '🔄';
+    font-size: 1.25rem;
 }
 
 .reset-btn:hover {
-    background-color: white;
-    color: #667eea;
+    background: var(--bg-tertiary);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .prediction-result {
+        padding: 1.5rem;
+    }
+    
+    .prediction-result h2 {
+        font-size: 1.5rem;
+    }
+    
+    .predicted-class {
+        padding: 1.5rem;
+    }
+    
+    .predicted-class .prediction-badge {
+        font-size: 1.25rem;
+        padding: 0.625rem 1.25rem;
+    }
 }

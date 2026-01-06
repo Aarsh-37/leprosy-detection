@@ -22,6 +22,7 @@ const ImageUpload = () => {
 
     const handleDrop = (e) => {
         e.preventDefault();
+        e.currentTarget.classList.remove('drag-over');
         const file = e.dataTransfer.files[0];
         if (file && file.type.startsWith('image/')) {
             setSelectedFile(file);
@@ -33,6 +34,12 @@ const ImageUpload = () => {
 
     const handleDragOver = (e) => {
         e.preventDefault();
+        e.currentTarget.classList.add('drag-over');
+    };
+
+    const handleDragLeave = (e) => {
+        e.preventDefault();
+        e.currentTarget.classList.remove('drag-over');
     };
 
     const handleSubmit = async () => {
@@ -56,18 +63,24 @@ const ImageUpload = () => {
 
     return (
         <div className="image-upload-container">
-            <h1>Leprosy Skin Lesion Detection</h1>
+            <div className="upload-header">
+                <h1>Leprosy Skin Lesion Detection</h1>
+                <p>Upload an image to analyze for leprosy using AI-powered detection</p>
+            </div>
 
             <div
                 className="drop-zone"
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
             >
                 {preview ? (
                     <img src={preview} alt="Preview" className="preview-image" />
                 ) : (
                     <div className="drop-zone-placeholder">
-                        <p>Drag and drop an image here or click to select</p>
+                        <div className="drop-zone-placeholder-icon">📤</div>
+                        <p>Drag and drop an image here</p>
+                        <span>or click to browse files</span>
                         <input
                             type="file"
                             accept="image/*"
