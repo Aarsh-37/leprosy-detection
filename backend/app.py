@@ -4,9 +4,8 @@ import os
 from model.utils import predict_image, load_model_and_labels
 
 app = Flask(__name__)
-CORS(app) # Enable CORS for frontend communication
+CORS(app)
 
-# Pre-load model at startup
 try:
     load_model_and_labels()
 except Exception as e:
@@ -37,6 +36,5 @@ def health():
     return jsonify({"status": "healthy", "model_loaded": os.path.exists("./saved_models/leprosy_xception.keras")})
 
 if __name__ == "__main__":
-    # Ensure saved_models directory exists
     os.makedirs("./saved_models", exist_ok=True)
     app.run(host="0.0.0.0", port=5000, debug=True)
