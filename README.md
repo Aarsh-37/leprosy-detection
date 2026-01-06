@@ -46,7 +46,7 @@ A full-stack web application for detecting leprosy from skin lesion images using
    pip install -r requirements.txt
    ```
 
-3. **Train the model** (optional, if model is not provided):
+3. **Train the model**:
    ```bash
    cd model
    python train.py
@@ -59,8 +59,6 @@ A full-stack web application for detecting leprosy from skin lesion images using
    cd ..
    python app.py
    ```
-   
-   The API will be available at `http://localhost:5000`
 
 ### Frontend Setup
 
@@ -78,22 +76,6 @@ A full-stack web application for detecting leprosy from skin lesion images using
    ```bash
    npm run dev
    ```
-   
-   The app will be available at `http://localhost:5173`
-
-## Usage
-
-1. **Start the backend server** (Flask API on port 5000)
-2. **Start the frontend server** (React app on port 5173)
-3. **Open your browser** and navigate to `http://localhost:5173`
-4. **Upload an image** of a skin lesion:
-   - Drag and drop an image into the upload zone, or
-   - Click to select an image from your file system
-5. **Click "Analyze Lesion"** to get the prediction
-6. **View the results**:
-   - Predicted class (Leprosy or Non-Leprosy)
-   - Confidence levels for each class
-   - Medical disclaimer
 
 ## Important Notes
 
