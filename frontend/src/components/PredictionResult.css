@@ -1,0 +1,111 @@
+.prediction-result {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.prediction-result h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.predicted-class {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.predicted-class h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.predicted-class span.leprosy {
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.predicted-class span.non-leprosy {
+    color: #51cf66;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.probabilities {
+    margin-bottom: 1.5rem;
+}
+
+.probabilities h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.probability-item {
+    margin-bottom: 1rem;
+}
+
+.probability-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.probability-bar {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.probability-fill {
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    height: 100%;
+    transition: width 0.5s ease;
+    border-radius: 10px;
+}
+
+.disclaimer {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #2c3e50;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #f39c12;
+}
+
+.disclaimer p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.disclaimer strong {
+    color: #e74c3c;
+}
+
+.reset-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: white;
+    color: #667eea;
+}

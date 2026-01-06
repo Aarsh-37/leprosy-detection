@@ -1,0 +1,56 @@
+##################################
+# Dataset (DO NOT PUSH)
+##################################
+data/
+
+##################################
+# Node / React / Vite
+##################################
+node_modules/
+dist/
+build/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.env
+.env.local
+.env.development
+.env.production
+
+##################################
+# Python / Flask
+##################################
+__pycache__/
+*.py[cod]
+venv/
+env/
+.venv/
+
+##################################
+# ML Models & Outputs
+##################################
+*.h5
+*.keras
+*.pt
+*.pth
+*.onnx
+checkpoints/
+models/
+saved_models/
+
+##################################
+# Uploads & Temp Files
+##################################
+uploads/
+*.log
+*.tmp
+
+##################################
+# IDE / OS
+##################################
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
